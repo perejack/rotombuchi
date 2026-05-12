@@ -1,15 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { FileText, ShoppingCart, Shield, AlertCircle } from "lucide-react";
-
-export const Route = createFileRoute("/terms-of-service")({
-  component: TermsOfServicePage,
-  head: () => ({
-    meta: [
-      { title: "Terms of Service — Roto Tank Kenya" },
-      { name: "description", content: "Roto Tank Kenya's terms of service - legal terms and conditions for using our website and purchasing our products." },
-    ],
-  }),
-});
 
 function TermsOfServicePage() {
   return (
@@ -210,3 +199,5 @@ function TermsOfServicePage() {
     </>
   );
 }
+
+export default TermsOfServicePage;

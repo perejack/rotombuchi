@@ -1,16 +1,6 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
 import { TANK_IMAGE } from "@/lib/products";
 import { Award, Users, Truck, Sparkles } from "lucide-react";
-
-export const Route = createFileRoute("/about")({
-  component: AboutPage,
-  head: () => ({
-    meta: [
-      { title: "About — Roto Tank Kenya" },
-      { name: "description", content: "Two decades of building Kenya's most trusted water storage tanks." },
-    ],
-  }),
-});
 
 function AboutPage() {
   return (
@@ -75,3 +65,5 @@ function AboutPage() {
     </>
   );
 }
+
+export default AboutPage;

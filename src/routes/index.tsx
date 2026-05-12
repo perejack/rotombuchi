@@ -1,17 +1,7 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
 import { ArrowRight, ShieldCheck, Truck, Droplet, Sun, Award, Star, Phone } from "lucide-react";
 import { products, TANK_IMAGE, PHONE, PHONE_TEL, waLink } from "@/lib/products";
 import { ProductCard } from "@/components/ProductCard";
-
-export const Route = createFileRoute("/")({
-  component: Home,
-  head: () => ({
-    meta: [
-      { title: "Roto Tank Kenya — Premium Water Storage Tanks" },
-      { name: "description", content: "Premium UV-stabilized cylindrical water tanks from 1,000L to 24,000L. Fast delivery across Kenya. Order via WhatsApp." },
-    ],
-  }),
-});
 
 function Home() {
   const featured = products.slice(0, 4);
@@ -229,3 +219,5 @@ function Home() {
     </>
   );
 }
+
+export default Home;

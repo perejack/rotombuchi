@@ -1,5 +1,5 @@
-import { Link } from "@tanstack/react-router";
-import { Phone, MessageCircle, Mail, MapPin, Droplet } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Phone, MessageCircle, Mail, MapPin, Droplet, ArrowRight } from "lucide-react";
 import { PHONE, PHONE_TEL, waLink } from "@/lib/products";
 
 export function Footer() {
@@ -7,12 +7,13 @@ export function Footer() {
     <footer className="bg-ink text-white/80 mt-24">
       <div className="mx-auto max-w-7xl px-4 py-16 grid gap-10 md:grid-cols-5">
         <div className="md:col-span-2 max-w-md">
-          <div className="flex items-center gap-2 mb-4">
-            <span className="grid place-items-center w-10 h-10 rounded-xl bg-accent text-accent-foreground">
-              <Droplet className="w-5 h-5" />
-            </span>
-            <span className="font-display text-xl font-bold text-white">ROTO TANK</span>
-          </div>
+          <Link
+            to="/products"
+            className="group inline-flex items-center gap-2 rounded-full bg-accent text-accent-foreground px-7 py-4 font-semibold shadow-2xl shadow-accent/30 hover:brightness-110 transition"
+          >
+            Browse Tanks
+            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition" />
+          </Link>
           <p className="text-sm leading-relaxed">
             Premium UV-stabilized water storage tanks built for Kenyan homes,
             farms and industries. Trusted by thousands across the country.

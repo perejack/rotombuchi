@@ -1,15 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { Shield, Eye, Lock, Database } from "lucide-react";
-
-export const Route = createFileRoute("/privacy-policy")({
-  component: PrivacyPolicyPage,
-  head: () => ({
-    meta: [
-      { title: "Privacy Policy — Roto Tank Kenya" },
-      { name: "description", content: "Roto Tank Kenya's privacy policy - how we collect, use, and protect your personal information." },
-    ],
-  }),
-});
 
 function PrivacyPolicyPage() {
   return (
@@ -159,3 +148,5 @@ function PrivacyPolicyPage() {
     </>
   );
 }
+
+export default PrivacyPolicyPage;

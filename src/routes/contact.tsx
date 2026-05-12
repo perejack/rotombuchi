@@ -1,16 +1,6 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
 import { Phone, MessageCircle, Mail, MapPin, Clock } from "lucide-react";
 import { PHONE, PHONE_TEL, waLink } from "@/lib/products";
-
-export const Route = createFileRoute("/contact")({
-  component: ContactPage,
-  head: () => ({
-    meta: [
-      { title: "Contact — Roto Tank Kenya" },
-      { name: "description", content: "Get in touch with Roto Tank Kenya. Call, WhatsApp, or email us." },
-    ],
-  }),
-});
 
 function ContactPage() {
   return (
@@ -72,3 +62,5 @@ function ContactPage() {
     </>
   );
 }
+
+export default ContactPage;

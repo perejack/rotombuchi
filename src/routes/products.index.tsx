@@ -1,18 +1,9 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { products } from "@/lib/products";
 import { ProductCard } from "@/components/ProductCard";
 
-export const Route = createFileRoute("/products/")({
-  component: ProductsPage,
-  head: () => ({
-    meta: [
-      { title: "Tanks for sale — Roto Tank Kenya" },
-      { name: "description", content: "Browse our full range of cylindrical water tanks from 1,000L to 24,000L." },
-    ],
-  }),
-});
-
-function ProductsPage() {
+function ProductsIndexPage() {
   return (
     <>
       <section className="bg-ink text-white py-16 md:py-24 relative overflow-hidden">
@@ -37,3 +28,5 @@ function ProductsPage() {
     </>
   );
 }
+
+export default ProductsIndexPage;
