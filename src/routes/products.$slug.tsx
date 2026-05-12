@@ -5,7 +5,7 @@ import { ProductCard } from "@/components/ProductCard";
 
 function ProductDetailPage() {
   const { slug } = useParams<{ slug: string }>();
-  const product = getProduct(slug);
+  const product = getProduct(slug || "");
   
   if (!product) {
     return (
@@ -24,6 +24,7 @@ function ProductDetailPage() {
   }
 
   const related = products.filter((p) => p.slug !== product.slug).slice(0, 4);
+  const orderMsg = `Hello Roto Tank! I'd like to order a ${product.name} (${product.priceLabel}). Please share next steps.`;
 
   return (
     <>
@@ -52,23 +53,25 @@ function ProductDetailPage() {
         </div>
       </section>
 
-            {[
-              { t: "Free delivery", d: "On orders above KSh 20,000 across Kenya." },
-              { t: "10-year warranty", d: "Manufacturer-backed peace of mind." },
-              { t: "Easy installation", d: "Lightweight design — easy to position on stands or ground." },
-              { t: "Hygienic & safe", d: "Food-grade material keeps water pure." },
-            ].map((b) => (
-              <div key={b.t} className="flex gap-4 bg-card border border-border rounded-2xl p-5">
-                <span className="grid place-items-center w-10 h-10 rounded-full bg-accent text-accent-foreground shrink-0">
-                  <Check className="w-5 h-5" />
-                </span>
-                <div>
-                  <div className="font-semibold">{b.t}</div>
-                  <div className="text-sm text-muted-foreground mt-1">{b.d}</div>
-                </div>
+      {/* Benefits */}
+      <section className="mx-auto max-w-7xl px-4 py-16">
+        <div className="grid md:grid-cols-2 gap-6">
+          {[
+            { t: "Free delivery", d: "On orders above KSh 20,000 across Kenya." },
+            { t: "10-year warranty", d: "Manufacturer-backed peace of mind." },
+            { t: "Easy installation", d: "Lightweight design — easy to position on stands or ground." },
+            { t: "Hygienic & safe", d: "Food-grade material keeps water pure." },
+          ].map((b) => (
+            <div key={b.t} className="flex gap-4 bg-card border border-border rounded-2xl p-5">
+              <span className="grid place-items-center w-10 h-10 rounded-full bg-accent text-accent-foreground shrink-0">
+                <Check className="w-5 h-5" />
+              </span>
+              <div>
+                <div className="font-semibold">{b.t}</div>
+                <div className="text-sm text-muted-foreground mt-1">{b.d}</div>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </section>
 
@@ -106,3 +109,5 @@ function ProductDetailPage() {
     </>
   );
 }
+
+export default ProductDetailPage;
